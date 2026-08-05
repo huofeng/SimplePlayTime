@@ -1,0 +1,22 @@
+name: SimplePlayTime
+version: '${project.version}'
+main: lol.hyper.simpleplaytime.SimplePlayTime
+api-version: 1.21
+author: hyperdefined
+description: Super simple playtime tracking with database support and TRM menu variables.
+website: https://github.com/hyperdefined/SimplePlayTime/
+folia-supported: true
+depend: []
+softdepend: [PlaceholderAPI, MiniPlaceholders]
+commands:
+  playtime:
+    usage: /playtime
+    description: See your playtime.
+    permission: simpleplaytime.command
+permissions:
+  simpleplaytime.command:
+    description: Allows the usage of /playtime.
+    default: true
+  simpleplaytime.reload:
+    description: Allows the usage of /playtime reload.
+    default: op

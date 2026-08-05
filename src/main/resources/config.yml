@@ -1,0 +1,57 @@
+# 数据库配置
+database:
+  enabled: true  # 设置为false可禁用数据库，使用PersistentDataContainer作为后备
+  type: "sqlite"  # mysql, sqlite
+  # MySQL配置 (当type为mysql时使用)
+  host: "localhost"
+  port: 3306
+  database: "minecraft"
+  username: "root"
+  password: "password"
+  # SQLite配置 (当type为sqlite时使用)
+  file: "playtime.db"
+  table-prefix: "spt_"
+
+# 数据同步配置
+data-sync:
+  save-interval: 300  # 自动保存间隔（秒）
+
+# 每日重置时间
+daily-reset-hour: 0  # 每日重置时间（0-23点）
+
+# ========================================
+# 变量系统说明
+# ========================================
+# 本插件支持两种变量系统（两个都加进去也可以的）：
+#
+# PlaceholderAPI 格式（Paper）：
+#   %simpleplaytime_total_seconds%     - 总在线时间（秒）
+#   %simpleplaytime_total_minutes%     - 总在线时间（分钟）
+#   %simpleplaytime_total_hours%       - 总在线时间（小时）
+#   %simpleplaytime_total_formatted%   - 总在线时间（格式化：xx天xx小时xx分钟xx秒）
+#   %simpleplaytime_daily_seconds%     - 今日在线时间（秒）
+#   %simpleplaytime_daily_minutes%     - 今日在线时间（分钟）
+#   %simpleplaytime_daily_hours%       - 今日在线时间（小时）
+#   %simpleplaytime_daily_formatted%   - 今日在线时间（格式化：xx天xx小时xx分钟xx秒）
+#
+# MiniPlaceholders 格式（Folia/Paper）：
+#   <simpleplaytime_total_seconds>     - 总在线时间（秒）
+#   <simpleplaytime_total_minutes>     - 总在线时间（分钟）
+#   <simpleplaytime_total_hours>       - 总在线时间（小时）
+#   <simpleplaytime_total_formatted>   - 总在线时间（格式化：xx天xx小时xx分钟xx秒）
+#   <simpleplaytime_daily_seconds>     - 今日在线时间（秒）
+#   <simpleplaytime_daily_minutes>     - 今日在线时间（分钟）
+#   <simpleplaytime_daily_hours>       - 今日在线时间（小时）
+#   <simpleplaytime_daily_formatted>   - 今日在线时间（格式化：xx天xx小时xx分钟xx秒）
+# ========================================
+
+messages:
+  players-only: "<red>非玩家执行This command is for players only.</red>"
+  #下面是时常为0玩家进入时候的提示，为空则关闭
+  playtime-start: ""
+  #下面为软件内部的变量
+  playtime-command: "<green>Total: %total_formatted% | Today: %daily_formatted%</green>"
+  daily-playtime: "<green>Today: %daily_formatted%</green>"
+  database-error: "<red>Database error occurred. Please contact an administrator.</red>"
+
+config-version: 3
